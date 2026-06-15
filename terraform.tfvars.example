@@ -1,0 +1,24 @@
+# Exemple de fichier terraform.tfvars pour l'infrastructure 3-tiers OVH
+# Copiez ce fichier en terraform.tfvars et adaptez les valeurs
+
+# --- OVH Cloud Credentials ---
+# À récupérer depuis : https://eu.api.ovh.com/
+ovh_api_key       = "votre_application_key"
+ovh_api_secret    = "votre_application_secret"
+ovh_consumer_key  = "votre_consumer_key"
+ovh_project_id    = "votre_project_id"  # Ex: "1234567890abcdef"
+
+# --- Configuration Générale ---
+app_name    = "mon-application-3tier"
+ovh_region  = "GRA9"  # Gravelines (France). Autres options : BHS5 (Canada), DE1 (Allemagne)
+
+# --- Configuration SSH (optionnel) ---
+# Pour ajouter une clé SSH : https://www.ovh.com/auth/api/ (Public Cloud -> SSH Keys)
+ssh_key_id    = "votre_ssh_key_id"  # Ex: "12345678-1234-1234-1234-123456789012"
+allow_ssh     = true
+ssh_source_ip = "123.123.123.123/32"  # Remplacez par votre IP publique
+
+# --- Configuration Base de Données ---
+db_name     = "app_db"
+db_username = "app_user"
+db_password = "UnMotDePasseSecurise123!"  # Changez en production !
